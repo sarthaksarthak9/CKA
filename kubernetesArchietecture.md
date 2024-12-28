@@ -16,7 +16,7 @@ The main implementation of a Kubernetes API server is kube-apiserver. kube-apise
 ### etcd
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
-** Listen on (2739) port **
+*** Listen on (2739) port ***
 
 ### kube-controller-manager
 It monitors the state of various components within the system and work towards to bringing the whole system to the desired functioning state.
