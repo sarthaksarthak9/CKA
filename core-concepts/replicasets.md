@@ -5,3 +5,10 @@ It help to run multiple instances of a single pod. It make ensure that specied n
 Replica set and Replication Controller are two different thing. The difference is that replica set require selector defination
 
 ###### replica-set is the new way to set up replication. 
+
+### When to use a ReplicaSet
+A ReplicaSet ensures that a specified number of pod replicas are running at any given time. However, a Deployment is a higher-level concept that manages ReplicaSets and provides declarative updates to Pods along with a lot of other useful features. Therefore, we recommend using Deployments instead of directly using ReplicaSets, unless you require custom update orchestration or don't require updates at all.
+
+This actually means that you may never need to manipulate ReplicaSet objects: use a Deployment instead, and define your application in the spec section.
+
+
