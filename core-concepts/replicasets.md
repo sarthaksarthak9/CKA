@@ -4,4 +4,4 @@ It help to run multiple instances of a single pod. It make ensure that specied n
 
 Replica set and Replication Controller are two different thing. The difference is that replica set require selector defination
 
-#### replica-set is the new way to set up replication. 
+########## replica-set is the new way to set up replication. 
