@@ -69,8 +69,8 @@ spec:
 Step 3: Manage the Custom Resource
 You can now manage the Book resource using kubectl:
 
-** kubectl get books **
-** kubectl describe book kubernetes-in-action **
+**kubectl get books**
+**kubectl describe book kubernetes-in-action**
 
 2. Agrregation Layer
 It allows you to extend kubernets API by deploying additional APIservers. These API servers can handle custom logic and resources, and they are integrated into the main kubernetes API server
