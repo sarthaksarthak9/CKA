@@ -19,7 +19,7 @@ Consistent and highly-available key value store used as Kubernetes' backing stor
 **Listen on (2739) port**
 
 ### kube-controller-manager
-It monitors the state of various components within the system and work towards to bringing the whole system to the desired functioning state.
+It monitors the state of various components within the system and ***work towards to bringing the whole system to the desired functioning state.***
 
 **each controller** is a seprate process but for simpilicity they are all compiled into a single binary and run in a single process.
 
