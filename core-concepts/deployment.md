@@ -40,6 +40,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
+```
 
 
 
