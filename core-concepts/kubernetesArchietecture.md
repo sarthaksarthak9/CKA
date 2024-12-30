@@ -38,7 +38,7 @@ it is like a captain of a ship. They lead all the activities. They do all the pa
 
 ###### we always manually install kubelet on our worker node.
 
-### Kube-Proxy
+### kube-Proxy
 it is a process that runs on each node in a kubernetes cluter, its job to look for new services, & every time when a service is created, it create appropriate rules on each node to forward traffic to backend.
 
 ### Pods
