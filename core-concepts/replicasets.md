@@ -13,7 +13,7 @@ This actually means that you may never need to manipulate ReplicaSet objects: us
 
 Example ReplicaSet
 ```
-apiVersion: apps/v1
+apiVersion: apps/v1    ## keep in mind apps/v1
 kind: ReplicaSet
 metadata:
   name: frontend
