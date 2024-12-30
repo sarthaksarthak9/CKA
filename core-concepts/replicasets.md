@@ -11,4 +11,29 @@ A ReplicaSet ensures that a specified number of pod replicas are running at any 
 
 This actually means that you may never need to manipulate ReplicaSet objects: use a Deployment instead, and define your application in the spec section.
 
+Example 
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
+
+```
 
