@@ -6,7 +6,7 @@ There are two primary ways to extend the Kubernetes API:
 
 ### Custom Resources
 
-Custom Resources(CR) allow you to define your own resource types in kubernetes. The resources can be managed by using kubernetes tools (eg. ** kubectl **) and APIs as build in resources. CRs are typically used to define domain-specific objects or configurations
+Custom Resources(CR) allow you to define your own resource types in kubernetes. The resources can be managed by using kubernetes tools (eg. **kubectl**) and APIs as build in resources. CRs are typically used to define domain-specific objects or configurations
 
 Example: Creating a Custom Resource
 
