@@ -20,6 +20,8 @@ Deployments ensure that the desired state of the application is maintained, even
 
 Deployments support rolling updates and rollbacks, allowing you to update Pods with zero downtime and revert to a previous version if needed.
 
+###### Deployments are high-level abstractions that manage ReplicaSets and provide advanced features like rolling updates and rollbacks.
+
 Example
 
 ```
