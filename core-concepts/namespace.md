@@ -19,6 +19,6 @@ kubernetes create a set of pods, services for it internal purpose such as those 
 
 ## Commands
 
-- **To change ns:** kubectl config set - context $(kubectl config current-context) -- namespace = dev
+- **To change ns:** kubectl config set-context --current --namespace=dev
 
 
