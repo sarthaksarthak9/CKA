@@ -1,2 +1,1 @@
-- k get pods
-- k get rs
+## Commands
