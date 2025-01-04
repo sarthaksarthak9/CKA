@@ -17,6 +17,14 @@ kubernetes create a set of pods, services for it internal purpose such as those 
 
 ###### format = nameofsvc.ns.sub-domainforsvc.domain (when a svc is created a dns entry is added automatically in this format)
 
+## LABS (see question 6 and 7)
+
+1. If an application is within the same ns as svc then we can access (if a db available) a db using svc name
+(In Kubernetes, Services provide a stable way to access applications running in Pods. When two applications (or components) are in the same namespace, you can use the Service name directly to communicate between them. This is because Kubernetes automatically sets up DNS resolution for Services within the same namespace.)
+
+2. When applications and Services are in different namespaces in Kubernetes, you need to use the fully qualified domain name (FQDN) or a shorthand notation to access the Service. This is because Kubernetes DNS resolves Service names within the context of their namespace.
+(svcname.ns.svc.cluster.local)
+
 ## Commands
 
 - **To change ns:** kubectl config set-context --current --namespace=dev
