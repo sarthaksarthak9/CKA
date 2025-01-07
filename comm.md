@@ -23,7 +23,7 @@
 Then <p>
 k expose pod httpd --type=ClusterIP --target-port=80 <p>
             or <p>
-1. kubectl run httpd --image=httpd:alpine --port=80 --expose
+ kubectl run httpd --image=httpd:alpine --port=80 --expose
 
 
 
