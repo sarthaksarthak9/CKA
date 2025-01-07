@@ -9,3 +9,6 @@
 1. k get ns
 2. k get pods -n=nameofns
 3. k run <podname> --image=redis -n=nameofns
+
+## SVC
+1. k expose pod pod-name --port=port-number --name=svc-name
