@@ -19,10 +19,10 @@
 
 ## Expose a Pod as a service
 
-1.k run httpd --image=httpd:alpine --port=80 
-Then
-k expose pod httpd --type=ClusterIP --target-port=80 
-            or
+1. k run httpd --image=httpd:alpine --port=80  <p>
+Then <p>
+k expose pod httpd --type=ClusterIP --target-port=80 <p>
+            or <p>
 1. kubectl run httpd --image=httpd:alpine --port=80 --expose
 
 
