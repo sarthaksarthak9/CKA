@@ -19,11 +19,25 @@
 
 ## Expose a Pod as a service
 
-1. k run httpd --image=httpd:alpine --port=80  <p>
-Then <p>
-k expose pod httpd --type=ClusterIP --target-port=80 <p>
-            or <p>
+1. k run httpd --image=httpd:alpine --port=80  <br>
+Then <br>
+k expose pod httpd --type=ClusterIP --target-port=80 <br>
+            or <br>
  kubectl run httpd --image=httpd:alpine --port=80 --expose
+
+## Scheduler
+
+1. k taint node node-name key=value:taint-effect
+2. **To remove the taint (impt)** : k taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+3. k label node node01 color=blue
+
+## Static Pods
+1. docker ps (to view it as kubectl use api server)
+
+2. **To find static Pod:** Run the command kubectl get pods --all-namespaces and look for those with -controlplane appended in the name
+
+
+
 
 
 
