@@ -61,3 +61,4 @@ rules:
   verbs: ["get", "update", "create"]
   resourceNames: ["blue", "orange"]
 ```
+
