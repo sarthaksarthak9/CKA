@@ -149,8 +149,77 @@ etcd-server ~ ➜
 This shows that there is only one member in this cluster.
 
 
+## Security
 
-Q3)
+#### To manage user account
+```
+k create serviceaccount sa
+```
+
+#### To authenticate using basic curl command (use username and password) or tokens
+```
+curl -v -k http..... "user1:pass"
+```
+
+#### To send a req for validationa nd signing
+```
+openssl req -new -key mybank.key -out my-bank.csr -subj "/C=US/ST=CA/O=MyOrg, Inc./CN=mybank.com"
+```
+
+#### To view detail of cert
+
+if you are looking for the actual certificate details, you may need to check the referenced certificate file, typically found in 
+
+```
+/etc/kubernetes/pki/.
+```
+```
+cat /etc/kubernetes/manifests/kube-apiserver.yaml
+```
+
+#### To see logs 
+```
+journalctl -u etcd.service -l
+```
+
+#### Certificate API
+
+- k get csr
+- k certificate approve/deny csr-name
+- k get csr csr-name -o yaml
+
+
+## Kube Config
+
+- k config view
+- k config view --kubeconfig=my-custom-config
+- k config --kubeconfig=/path/my-kube-config use-context nameofcontext
+- k config --kubeconfig=/path/my-kube-config current-context
+
+## RBAC
+- k get roles
+- k get rolebinding
+- k describe rolebinding rb-name
+
+## Check Access
+
+- kubectl auth can-i create deployments
+- kubectl auth can-i delete nodes
+- kubectl auth can-i create deployments --as dev-user
+- kubectl auth can-i create pods --as dev-user
+- kubectl auth can-i create pods --as dev-user --namespace test
+
+#### To see resources
+
+- k api-resources -n true
+- k api-resources -n false
+
+#### To see common name (CN) of the certificate and name of the issuer
+
+- The below make the certificate details visible in human readable format
+```
+openssl x509 -in file-path.crt -text -noout
+```
 
 
 
