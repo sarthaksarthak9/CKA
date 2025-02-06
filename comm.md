@@ -221,6 +221,11 @@ journalctl -u etcd.service -l
 openssl x509 -in file-path.crt -text -noout
 ```
 
+### Lab Certificate API
+
+- kubectl certificate deny agent-smith
+- kubectl certificate approve agent-smith
+
 
 
 
