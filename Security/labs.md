@@ -9,3 +9,10 @@ Q4. <br>
 Q6. What is the Common Name (CN) configured on the Kube API Server Certificate?
 
 - openssl x509 -in file-path.crt -text -noout
+
+
+### Lab Certificate API
+
+- kubectl certificate deny agent-smith
+- kubectl certificate approve agent-smith
+
