@@ -97,7 +97,7 @@ kubectl uncordon node-1
 ```
 
 
-## Os-Upgrades 
+## OS-Upgrades 
 
 1. kubeadm upgrade plans // to see the lastest v available
 2. apt-get upgrade -y kubeadm=1.12.0 // to upgrade to a version
@@ -209,9 +209,11 @@ journalctl -u etcd.service -l
 - kubectl auth can-i create pods --as dev-user
 - kubectl auth can-i create pods --as dev-user --namespace test
 
-#### To see resources
+### To see resources
 
+#### Namespaced
 - k api-resources -n true
+#### Non-Namespaced
 - k api-resources -n false
 
 #### To see common name (CN) of the certificate and name of the issuer
@@ -225,6 +227,88 @@ openssl x509 -in file-path.crt -text -noout
 
 - kubectl certificate deny agent-smith
 - kubectl certificate approve agent-smith
+
+### Lab Cluster role
+
+- k get clusterrole --no-headers | wc -l ## wc -l to count no of lines
+
+### Lab Service account
+
+- kubectl create serviceaccount dashboard-sa
+
+### Image security
+
+- kubectl create secret docker-registry name --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+
+### Security context
+
+- kubectl exec ubuntu-sleeper -- whoami and check the user that is running the container.
+
+Q3. Edit the pod ubuntu-sleeper to run the sleep process with user ID 1010.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper
+spec:
+  securityContext:
+    runAsUser: 1010   # Set at pod level (already present)
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    command: ["sleep", "4800"]
+    securityContext:
+      runAsUser: 1010   # Explicitly set at container level
+
+```
+
+### Network Policy
+
+- kubectl get networkpolicy or kubectl get netpol
+
+
+## Networking
+
+### Switch
+
+##### To view interface in a host
+
+`ip link`
+
+##### To add ip address
+`ip addr add dev eth0 ip-addrs` ## dev eth0 is the interface
+
+##### Checking the reachability of the IP Addr on the Network
+`ping ip-addrs`
+
+
+### Router
+
+##### To see kernel routing table
+`route`
+
+#### Add a route to the routing table
+
+`ip route add <ip-1> via <ip-2>`
+
+- `ip route add` → This is the command to add a new route.
+- `<ip-1>` → This is the destination IP address or subnet you want to route traffic to.
+- `via <ip-2>` → This specifies the next-hop IP address (gateway) through which traffic for <ip-1> should be sent.
+
+#### Create Network Namespace
+
+`ip netns add <name>`
+
+#### To list Network Namespace
+`ip netns`
+
+#### To list Interface
+`ip link`
+
+#### To list interface in a ns
+`ip netns exec <name of ns> ip link` or `ip -n <nameofns> link`
+
 
 
 
