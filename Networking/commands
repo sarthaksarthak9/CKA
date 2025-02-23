@@ -1,0 +1,112 @@
+### Switch
+
+##### To view interface in a host
+
+`ip link`
+
+##### To add ip address
+`ip addr add dev eth0 ip-addrs` ## dev eth0 is the interface
+
+##### Checking the reachability of the IP Addr on the Network
+`ping ip-addrs`
+
+
+### Router
+
+##### To see kernel routing table
+`route`
+
+#### Add a route to the routing table
+
+`ip route add <ip-1> via <ip-2>`
+
+- `ip route add` → This is the command to add a new route.
+- `<ip-1>` → This is the destination IP address or subnet you want to route traffic to.
+- `via <ip-2>` → This specifies the next-hop IP address (gateway) through which traffic for <ip-1> should be sent.
+
+## Network namespace
+
+#### Create Network Namespace
+
+`ip netns add <name>`
+
+#### To list Network Namespace
+`ip netns`
+
+#### To list Interface
+`ip link`
+
+#### To list interface in a ns
+`ip netns exec <name of ns> ip link` or `ip -n <nameofns> link`
+
+#### To see arp Table
+`arp`
+
+#### To see routing Table
+`route`
+
+
+### PIPE (Virtual cable)
+
+#### To create a virtual cable
+`ip link add <name of interface 1> type veth peer name <name of interface 2>`
+
+#### Attach both interface with repective ns
+- `ip link set <interf 1> netns <ns 1>`
+
+- `ip link set <interf 2> netns <ns 2>`
+
+#### Assign IP address to each ns
+
+`ip -n <ns 1> addr add <IP-1> dev <Interface 1>`
+
+`ip -n <ns 2> addr add <IP-1> dev <Interface 2>`
+
+#### To turn it up ns interfaces
+
+`ip -n <ns 1> link set <interface 1> up`
+
+`ip -n <ns 2> link set <interface 2> up`
+
+#### To delete a Link
+
+`ip -n red link del veth-red`
+
+### Internal Bridge Network
+
+#### To create an internal Bridge network
+
+`https://chatgpt.com/share/67b973f2-5dd8-8003-b060-5841a65dd41f`
+
+
+### Docker Networking
+
+#### None Network
+`docker run --network none nginx`
+
+#### Host Network
+`docker run --network host nginx`
+
+#### List Docker Network
+`docker network ls`
+
+#### To view the Network Interface on the Host
+`ip link`
+`ip link show <bridge name>`
+
+
+#### To add interface docker0 to bridge
+`ip link add docker0 type bridge`
+
+#### To check ip add of docker0
+`ip addr show docker0`
+
+### Port Mapping
+
+
+
+
+
+
+
+
