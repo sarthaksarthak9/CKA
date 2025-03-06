@@ -69,6 +69,15 @@ The NAT (Network Address Translation) table in iptables is responsible for modif
 - Port Forwarding & Load Balancing → Redirects traffic from one IP/port to another.
 
 
-## CNI
+## Service Networking
+
+#### To check the Service Cluster IP Range
+`ps -aux | grep kube-apiserver`
+
+#### To check the rules created by kube-proxy in the iptables
+`iptables -L -t nat | grep local-cluster`
+
+#### To check the logs of kube-proxy
+`cat /var/log/kube-proxy.log`
 
 
