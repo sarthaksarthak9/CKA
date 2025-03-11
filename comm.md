@@ -309,7 +309,36 @@ spec:
 #### To list interface in a ns
 `ip netns exec <name of ns> ip link` or `ip -n <nameofns> link`
 
+### Service Networking
 
+#### To check the Service Cluster IP Range
+`ps -aux | grep kube-apiserver`
+
+#### To check the rules created by kube-proxy in the iptables
+`iptables -L -t nat | grep local-cluster`
+
+#### To check the logs of kube-proxy
+`cat /var/log/kube-proxy.log`
+
+
+## HPA (2025)
+
+- `k get hpa --watch`
+
+## VPA(2025)
+
+- `kubectl get deployments -n kube-system | grep vpa`
+
+
+## Helm
+
+- helm repo list
+- helm list (display all details there is also a chart section)
+- helm install amaze-surf bitnami/apache
+- helm uninstall release-name
+- helm repo remove hashicorp
+- helm rollback dazzling-web
+- helm upgrade dazzling-web<name of the revision>bitnami/nginx<name of the chart> --version 18.3.6
 
 
 
