@@ -11,3 +11,19 @@ resources:
   - message-broker/rabbitmq-service.yaml
   - nginx/nginx-depl.yaml
   - nginx/nginx-service.yaml
+
+# Transformer
+namePrefix: data-
+namespace: logging
+
+commonLabels: 
+  sandbox: dev
+
+commonAnnotations:
+  owner: bob@gmail.com
+
+images:
+  - name: nginx
+    newName: haproxy
+    newTag: "2.4"
+
