@@ -1,0 +1,17 @@
+## Json
+
+patches:
+  - target:
+      kind: Deployment
+      name: api-
+deployment
+  patch: | -
+    - op: add
+      path: /spec/template/metadata/labels/org
+        value: KodeKloud
+
+## merge
+patches:
+  - label-patch.yaml
+
+
