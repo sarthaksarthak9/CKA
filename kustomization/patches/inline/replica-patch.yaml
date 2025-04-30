@@ -1,0 +1,12 @@
+## merge
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 5
+
+## inline
+- op: replace
+  path: /spec/replicas
+  value: 5
