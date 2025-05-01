@@ -1,0 +1,12 @@
+## always remember indexing start from 0
+patches:
+  - target: 
+      kind: Deployment
+      name: api-deployment
+  patch: | -
+    - op: remove
+      path: /spec/template/spec/containers/1
+
+## merge
+patches:
+  - label-patch.yaml
