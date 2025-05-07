@@ -1,0 +1,16 @@
+# json
+## replace
+patches:
+  - target:
+      kind: Deployment
+      name: api-deployment
+  patch: | -
+    - op: replace
+      path: /spec/template/spec/containers/0
+        value: 
+          name: haproxy
+          image: haproxy
+
+# merge
+patches:
+  - label-patch.yaml
