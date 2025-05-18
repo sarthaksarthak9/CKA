@@ -1,0 +1,16 @@
+## - mean we want to add
+patches:
+    - target:
+        kind: Deployment
+        name: api-
+deployment
+    patch: | -
+        - op: add
+          path: /spec/template/spec/containers/-
+            value: 
+                name: haproxy
+                image: haproxy
+
+## merge
+patches:
+    - label-patch.yaml
