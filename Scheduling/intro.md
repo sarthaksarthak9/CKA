@@ -28,7 +28,4 @@ spec:
 
 -  kubectl get pods --namespace kube-system to see the status of scheduler pod. We have removed the scheduler from this Kubernetes cluster. As a result, as it stands, the pod will remain in a pending state forever.
 
-
-
-
-
+## limit ranges , Resource quotas
